@@ -10,5 +10,6 @@ package Model;
  * @author Dell
  */
 public class NewClass {
-    
+    String New;
+    String New1;
 }
