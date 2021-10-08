@@ -9,6 +9,6 @@ package Model;
  *
  * @author Dell
  */
-public class NewClass {
-
+public class NewClass1 {
+    
 }
