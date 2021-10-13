@@ -1,6 +1,7 @@
 
 package UI.Form;
 
+import UI.Components.Add_Checkin;
 import UI.Swing.EventCallBack;
 import UI.Swing.EventTextField;
 import java.awt.Color;
@@ -8,10 +9,10 @@ import UI.Components.Add_User;
 import java.awt.event.ActionListener;
 
 
-public class Form_Account extends javax.swing.JPanel {
+public class Form_User extends javax.swing.JPanel {
 
 
-    public Form_Account() {
+    public Form_User() {
         initComponents();
 //        getContentPane().setBackground(new Color(240, 240, 240));
         txt1.addEvent(new EventTextField() {
@@ -74,7 +75,7 @@ public class Form_Account extends javax.swing.JPanel {
         jTable1.setSelectionBackground(new java.awt.Color(99, 222, 247));
         jScrollPane1.setViewportView(jTable1);
 
-        myButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icon_AddCheckin.png"))); // NOI18N
+        myButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/add_user.png"))); // NOI18N
         myButton1.setText("Thêm tài khoản");
         myButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         myButton1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -112,8 +113,8 @@ public class Form_Account extends javax.swing.JPanel {
                 .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addComponent(myButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -149,7 +150,7 @@ public class Form_Account extends javax.swing.JPanel {
 
     private void myButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton1ActionPerformed
         // TODO add your handling code here:
-        new Add_User().setVisible(true);
+        new Add_Checkin().setVisible(true);
         this.disable();
     }//GEN-LAST:event_myButton1ActionPerformed
 

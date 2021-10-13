@@ -1,8 +1,7 @@
 package Main;
 
 import UI.Event.EventMenu;
-import UI.Form.Form1;
-import UI.Form.Form_Account;
+import UI.Form.Form_User;
 import UI.Form.Form_Home;
 import UI.Swing.EventCallBack;
 import UI.Swing.EventTextField;
@@ -125,14 +124,8 @@ public class Main extends javax.swing.JFrame {
                 if (index == 0) {
                     showForm(new Form_Home());
                 } else if (index == 1) {
-                    showForm(new Form_Account());
-                } else if (index == 2) {
-                    showForm(new Form1());
-                } else if (index == 3) {
-                    showForm(new Form1());
-                } else if (index == 4) {
-                    showForm(new Form1());
-                }
+                    showForm(new Form_User());
+                } 
             }
         });
     }//GEN-LAST:event_formWindowOpened
