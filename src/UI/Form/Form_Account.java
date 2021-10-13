@@ -4,6 +4,8 @@ package UI.Form;
 import UI.Swing.EventCallBack;
 import UI.Swing.EventTextField;
 import java.awt.Color;
+import UI.Components.Add_User;
+import java.awt.event.ActionListener;
 
 
 public class Form_Account extends javax.swing.JPanel {
@@ -33,6 +35,9 @@ public class Form_Account extends javax.swing.JPanel {
             }
         });
     }
+//        public void addEventRegister(ActionListener event) {
+//        myButton1.addActionListener(event);
+//    }
 
 
     @SuppressWarnings("unchecked")
@@ -66,13 +71,19 @@ public class Form_Account extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.setSelectionBackground(new java.awt.Color(99, 222, 247));
         jScrollPane1.setViewportView(jTable1);
 
         myButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icon_AddCheckin.png"))); // NOI18N
-        myButton1.setText("Thêm danh mục");
+        myButton1.setText("Thêm tài khoản");
         myButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         myButton1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         myButton1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        myButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton1ActionPerformed(evt);
+            }
+        });
 
         txt1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -85,23 +96,23 @@ public class Form_Account extends javax.swing.JPanel {
         panelShadow1Layout.setHorizontalGroup(
             panelShadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1086, Short.MAX_VALUE)
-            .addGroup(panelShadow1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(myButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(panelShadow1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(myButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelShadow1Layout.setVerticalGroup(
             panelShadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelShadow1Layout.createSequentialGroup()
                 .addGap(4, 4, 4)
                 .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(7, 7, 7)
                 .addComponent(myButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
+                .addGap(65, 65, 65)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE))
         );
 
@@ -135,6 +146,12 @@ public class Form_Account extends javax.swing.JPanel {
     private void txt1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_txt1MouseClicked
+
+    private void myButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton1ActionPerformed
+        // TODO add your handling code here:
+        new Add_User().setVisible(true);
+        this.disable();
+    }//GEN-LAST:event_myButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

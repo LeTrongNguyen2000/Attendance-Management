@@ -77,6 +77,11 @@ public class Login extends javax.swing.JPanel {
         myButton1.setBackground(new java.awt.Color(125, 229, 251));
         myButton1.setText("Đăng nhập");
         myButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        myButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton1ActionPerformed(evt);
+            }
+        });
 
         cmdRegister1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         cmdRegister1.setForeground(new java.awt.Color(30, 122, 236));
@@ -144,6 +149,12 @@ public class Login extends javax.swing.JPanel {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_cmdRegister1MouseClicked
+
+    private void myButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton1ActionPerformed
+        // TODO add your handling code here:
+        new Main.Main().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_myButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
