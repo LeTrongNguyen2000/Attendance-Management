@@ -42,6 +42,7 @@ public class Main_Login extends javax.swing.JFrame {
                 login.login();
             }
         });
+        String Done;
     }
 
     /**
