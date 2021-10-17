@@ -38,7 +38,7 @@ public class MenuItem extends javax.swing.JPanel {
         lbName = new javax.swing.JLabel();
         lbIcon = new javax.swing.JLabel();
 
-        lbName.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lbName.setFont(new java.awt.Font("sansserif", 1, 15)); // NOI18N
         lbName.setForeground(new java.awt.Color(198, 203, 210));
         lbName.setText("Menu Name");
 

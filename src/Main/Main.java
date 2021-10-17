@@ -1,8 +1,14 @@
 package Main;
 
 import UI.Event.EventMenu;
+import UI.Form.Form_Absence;
+import UI.Form.Form_Checkin;
+import UI.Form.Form_Checkin;
 import UI.Form.Form_User;
 import UI.Form.Form_Home;
+import UI.Form.Form_Leader;
+import UI.Form.Form_Student;
+import UI.Form.Form_StudentCheckin;
 import UI.Swing.EventCallBack;
 import UI.Swing.EventTextField;
 import java.awt.Color;
@@ -16,6 +22,14 @@ public class Main extends javax.swing.JFrame {
         setSize(Toolkit.getDefaultToolkit().getScreenSize());
         setBackground(new Color(0, 0, 0, 0));
         showForm(new Form_Home());
+    }
+    
+    public Main(String i)
+    {
+        initComponents();
+        setSize(Toolkit.getDefaultToolkit().getScreenSize());
+        setBackground(new Color(0, 0, 0, 0));
+        showForm(new Form_Checkin());
     }
 
     private void showForm(Component com) {
@@ -78,10 +92,10 @@ public class Main extends javax.swing.JFrame {
         panelBorder1Layout.setHorizontalGroup(
             panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBorder1Layout.createSequentialGroup()
-                .addGroup(panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelShadow1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 1108, Short.MAX_VALUE))
+                .addGroup(panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelShadow1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 1109, Short.MAX_VALUE))
             .addGroup(panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBorder1Layout.createSequentialGroup()
                     .addGap(272, 272, 272)
@@ -125,7 +139,18 @@ public class Main extends javax.swing.JFrame {
                     showForm(new Form_Home());
                 } else if (index == 1) {
                     showForm(new Form_User());
+                } else if (index == 2) {
+                    showForm(new Form_Checkin());
+                } else if (index == 3) {
+                    showForm(new Form_StudentCheckin());
+                } else if (index == 4) {
+                    showForm(new Form_Student());
+                } else if (index == 5) {
+                    showForm(new Form_Leader());
+                } else if (index == 6) {
+                    showForm(new Form_Absence());
                 } 
+                
             }
         });
     }//GEN-LAST:event_formWindowOpened

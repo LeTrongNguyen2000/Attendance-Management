@@ -80,9 +80,11 @@ public class Menu extends PanelShadow {
     private void initData() {
         listMenu.addItem(new Model_Menu("1", "Trang chủ", Model_Menu.MenuType.MENU));
         listMenu.addItem(new Model_Menu("2", "Tài khoản", Model_Menu.MenuType.MENU));
-        listMenu.addItem(new Model_Menu("3", "Điểm danh", Model_Menu.MenuType.MENU));
-        listMenu.addItem(new Model_Menu("4", "Sinh viên", Model_Menu.MenuType.MENU));
-        listMenu.addItem(new Model_Menu("5", "Ban cán sự", Model_Menu.MenuType.MENU));
+        listMenu.addItem(new Model_Menu("3", "Danh mục", Model_Menu.MenuType.MENU));
+        listMenu.addItem(new Model_Menu("4", "Danh sách điểm danh", Model_Menu.MenuType.MENU));
+        listMenu.addItem(new Model_Menu("5", "Sinh viên", Model_Menu.MenuType.MENU));
+        listMenu.addItem(new Model_Menu("6", "Ban cán sự", Model_Menu.MenuType.MENU));
+        listMenu.addItem(new Model_Menu("7", "Đơn xin phép", Model_Menu.MenuType.MENU));
     }
 
     private void createImage() {
@@ -111,14 +113,14 @@ public class Menu extends PanelShadow {
         profile1 = new UI.Components.Profile();
         listMenu = new UI.Swing.ListMenu<>();
 
-        listMenu.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        listMenu.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         listMenu.setOpaque(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(profile1, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+            .addComponent(profile1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, Short.MAX_VALUE)
             .addComponent(listMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
