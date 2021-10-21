@@ -1,25 +1,76 @@
 package UI.Form;
 
+import Model.Checkin;
+import Model.ClassSubject;
+import Model.Student;
+import Model.User;
+import Service.Service;
 import UI.Charts.ModelChart;
 import UI.Model.Model_Card;
 import java.awt.Color;
+import java.util.List;
 import javax.swing.ImageIcon;
 
 public class Form_Home extends javax.swing.JPanel {
 
+    Service service = new Service();
+
     public Form_Home() {
         initComponents();
+        ValuesStudent();
+        ValuesLeader();
+        ValuesCheckin();
+        ValuesClassSubject();
         testData();
     }
 
+    public void ValuesClassSubject() {
+        //card1.setValues(values);
+        List<ClassSubject> classSubjects = service.SetNumberOfClassSubject("");
+        for (ClassSubject classSubject : classSubjects) {
+            String NumberOfClassSubject = classSubject.getQuantity();
+            System.out.println(NumberOfClassSubject);
+            card1.setData(new Model_Card(new ImageIcon(getClass().getResource("/Icon/icon_class.png")), "Lớp học phần", NumberOfClassSubject));
+        }
+    }
+
+    public void ValuesStudent() {
+        //card2.setValues(values);
+        List<Student> students = service.SetNumberOfStudent("");
+        for (Student student : students) {
+            String NumberOfStudent = student.getQuantity();
+            System.out.println(NumberOfStudent);
+            card2.setData(new Model_Card(new ImageIcon(getClass().getResource("/Icon/icon_student.png")), "Sinh viên", NumberOfStudent));
+        }
+    }
+
+    public void ValuesLeader() {
+        //card3.setValues(values);
+        List<Student> students = service.SetNumberOfLeader("");
+        for (Student student : students) {
+            String NumberOfLeader = student.getQuantity();
+            System.out.println(NumberOfLeader);
+            card3.setData(new Model_Card(new ImageIcon(getClass().getResource("/Icon/icon_leader.png")), "Ban cán sự", NumberOfLeader));
+        }
+    }
+
+    public void ValuesCheckin() {
+        //card4.setValues(values);
+        List<Checkin> checkins = service.SetNumberOfCheckin("");
+        for (Checkin checkin : checkins) {
+            String NumberOfCheckin = checkin.getQuantity();
+            System.out.println(NumberOfCheckin);
+            card4.setData(new Model_Card(new ImageIcon(getClass().getResource("/Icon/icon_lesson.png")), "Buổi học", NumberOfCheckin));
+        }
+    }
+
     private void testData() {
+
         card1.setData(new Model_Card(new ImageIcon(getClass().getResource("/Icon/icon_class.png")), "Lớp học phần", "1000"));
-        card2.setData(new Model_Card(new ImageIcon(getClass().getResource("/Icon/icon_student.png")), "Sinh viên", "30000"));
-        card3.setData(new Model_Card(new ImageIcon(getClass().getResource("/Icon/icon_leader.png")), "Ban cán sự", "2000"));
         card4.setData(new Model_Card(new ImageIcon(getClass().getResource("/Icon/icon_lesson.png")), "Buổi học", "10000"));
         chart.addLegend("Lớp học phần", new Color(245, 189, 135));
         chart.addLegend("Buổi học", new Color(135, 189, 245));
-        chart.addLegend("Sinh viên", new Color(189, 135, 245));
+        chart.addLegend("Sinh viên đã điểm danh", new Color(189, 135, 245));
         chart.addData(new ModelChart("HK 1 Năm học 2020-2021", new double[]{500, 200, 80}));
         chart.addData(new ModelChart("HK 2 Năm học 2020-2021", new double[]{600, 750, 90}));
         chart.addData(new ModelChart("HK 3 Năm học 2020-2021", new double[]{200, 350, 460}));
@@ -41,6 +92,7 @@ public class Form_Home extends javax.swing.JPanel {
         panelShadow2 = new UI.Swing.PanelShadow();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(242, 246, 253));
         setPreferredSize(new java.awt.Dimension(1090, 745));
@@ -111,6 +163,10 @@ public class Form_Home extends javax.swing.JPanel {
         jLabel1.setText("Trang chủ");
         jLabel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel5.setText("Một số thống kê được thể hiện ở trang chủ.");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -120,18 +176,23 @@ public class Form_Home extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(panelShadow2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(0, 574, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(card1, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                        .addComponent(card1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(card2, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                        .addComponent(card2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(card3, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                        .addComponent(card3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(card4, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)))
+                        .addComponent(card4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(27, 27, 27))
             .addComponent(panelShadow1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -145,8 +206,10 @@ public class Form_Home extends javax.swing.JPanel {
                             .addComponent(jLabel4)
                             .addComponent(panelShadow2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel1)))
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel5)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(card2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(card3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -168,6 +231,7 @@ public class Form_Home extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private UI.Swing.PanelShadow panelShadow1;
     private UI.Swing.PanelShadow panelShadow2;
     // End of variables declaration//GEN-END:variables

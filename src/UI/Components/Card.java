@@ -19,6 +19,11 @@ public class Card extends PanelShadow {
     private void init() {
         setRadius(25);
     }
+    
+    public void setValues(String values)
+    {
+        lbValues.setText(values);
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

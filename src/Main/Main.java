@@ -1,5 +1,8 @@
 package Main;
 
+import Model.User;
+import Service.Service;
+import UI.Components.Menu;
 import UI.Event.EventMenu;
 import UI.Form.Form_Absence;
 import UI.Form.Form_Checkin;
@@ -14,8 +17,11 @@ import UI.Swing.EventTextField;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Toolkit;
+import java.util.List;
 
 public class Main extends javax.swing.JFrame {
+
+    Service service = new Service();
 
     public Main() {
         initComponents();
@@ -23,13 +29,24 @@ public class Main extends javax.swing.JFrame {
         setBackground(new Color(0, 0, 0, 0));
         showForm(new Form_Home());
     }
-    
-    public Main(String i)
-    {
+
+    public Main(String UserName, String Pass) {
         initComponents();
         setSize(Toolkit.getDefaultToolkit().getScreenSize());
         setBackground(new Color(0, 0, 0, 0));
-        showForm(new Form_Checkin());
+
+        List<User> users = service.setInfor(UserName);
+        String FullName;
+        String Position;
+        //service.setInfor(UserName);
+        for (User user : users) {
+            FullName = user.getFullName();
+            Position = user.getRoleName();
+            System.out.println(FullName + "\t" + Position);
+            menu1.Info(FullName, Position);
+        }
+        showForm(new Form_Home());
+
     }
 
     private void showForm(Component com) {
@@ -149,15 +166,16 @@ public class Main extends javax.swing.JFrame {
                     showForm(new Form_Leader());
                 } else if (index == 6) {
                     showForm(new Form_Absence());
-                } 
-                
+                }
+
             }
         });
     }//GEN-LAST:event_formWindowOpened
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
-        System.exit(0);
+        new Main_Login().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
 
     public static void main(String args[]) {

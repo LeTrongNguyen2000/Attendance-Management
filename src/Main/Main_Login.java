@@ -6,7 +6,7 @@
 package Main;
 
 import UI.Components.Login;
-import UI.Components.Register;
+import UI.Components.ChangePassword;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,7 +24,7 @@ public class Main_Login extends javax.swing.JFrame {
         initComponents();
         setSize(Toolkit.getDefaultToolkit().getScreenSize());
         Login login = new Login();
-        Register register = new Register();
+        ChangePassword register = new ChangePassword();
         slide.setAnimate(5);
         slide.init(login, register);
         login.addEventRegister(new ActionListener() {

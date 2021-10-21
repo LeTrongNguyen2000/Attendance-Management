@@ -9,6 +9,7 @@ import UI.Swing.PanelShadow;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import javax.swing.Icon;
 import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTarget;
 import org.jdesktop.animation.timing.TimingTargetAdapter;
@@ -27,6 +28,16 @@ public class Menu extends PanelShadow {
     public Menu() {
         initComponents();
         init();
+    }
+    
+    public void Info(String Name, String Position)
+    {
+        profile1.setInfo(Name, Position);
+    }
+    
+    public void Avatar(Icon icon)
+    {
+        profile1.setAvatar(icon);
     }
 
     private void init() {

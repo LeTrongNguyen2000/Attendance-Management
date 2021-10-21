@@ -1,10 +1,24 @@
 package UI.Components;
 
+import javax.swing.Icon;
+
 public class Profile extends javax.swing.JPanel {
 
     public Profile() {
         initComponents();
         setOpaque(false);
+    }
+    
+        
+    public void setInfo(String Name, String Position)
+    {
+        lb_Name.setText(Name);
+        lb_Position.setText(Position);
+    }
+    
+    public void setAvatar(Icon icon)
+    {
+        imageAvatar1.setIcon(icon);
     }
 
     @SuppressWarnings("unchecked")
@@ -12,20 +26,19 @@ public class Profile extends javax.swing.JPanel {
     private void initComponents() {
 
         imageAvatar1 = new UI.Swing.ImageAvatar();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lb_Name = new javax.swing.JLabel();
+        lb_Position = new javax.swing.JLabel();
 
         imageAvatar1.setForeground(new java.awt.Color(0, 181, 204));
         imageAvatar1.setBorderSize(2);
-        imageAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icon_avatar_1.png"))); // NOI18N
+        imageAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icon_avatar.png"))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 181, 204));
-        jLabel1.setText("Lê Trọng Nguyên");
+        lb_Name.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        lb_Name.setForeground(new java.awt.Color(0, 181, 204));
+        lb_Name.setText("Lê Trọng Nguyên");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 181, 204));
-        jLabel2.setText("Ban cán sự");
+        lb_Position.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        lb_Position.setText("Ban cán sự");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -36,8 +49,8 @@ public class Profile extends javax.swing.JPanel {
                 .addComponent(imageAvatar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(lb_Name)
+                    .addComponent(lb_Position))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -46,9 +59,9 @@ public class Profile extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(lb_Name)
                         .addGap(10, 10, 10)
-                        .addComponent(jLabel2))
+                        .addComponent(lb_Position))
                     .addComponent(imageAvatar1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -56,7 +69,7 @@ public class Profile extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private UI.Swing.ImageAvatar imageAvatar1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lb_Name;
+    private javax.swing.JLabel lb_Position;
     // End of variables declaration//GEN-END:variables
 }
